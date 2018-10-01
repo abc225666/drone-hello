@@ -1,0 +1,9 @@
+branches:
+  master
+pipeline:
+  publish:
+    image: plugins/docker
+    repo: abc225666/tornado-hello
+    secrets:
+    - publish_username
+    - publish_password
