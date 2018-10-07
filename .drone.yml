@@ -3,7 +3,7 @@ branches:
 pipeline:
   publish:
     image: plugins/docker
-    repo: abc225666/tornado-hello
+    repo: harbor.iinumbers.net/library/tornado-hello
     registry: harbor.iinumbers.net
     secrets:
     - docker_username
