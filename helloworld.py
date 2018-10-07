@@ -29,7 +29,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write("Hello, world")
+        self.write("Hello, world!")
 
 
 def main():
