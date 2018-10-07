@@ -4,6 +4,7 @@ pipeline:
   publish:
     image: plugins/docker
     repo: abc225666/tornado-hello
-    secrets:
-    - docker_username
-    - docker_password
+    registry: harbor.iinumbers.net
+    #secrets:
+    #- docker_username
+    #- docker_password
