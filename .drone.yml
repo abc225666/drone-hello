@@ -4,6 +4,9 @@ pipeline:
   publish:
     image: plugins/docker
     repo: harbor.iinumbers.net/library/tornado-hello
+    tags:
+    - "latest"
+    - "${DRONE_COMMIT_SHA:0:8}"
     registry: harbor.iinumbers.net
     secrets:
     - docker_username
