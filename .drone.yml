@@ -3,7 +3,7 @@ pipeline:
     image: alpine
     commands:
     - env
-    - "echo ${test} > zz"
+    - "echo ${TEST} > zz"
     - "cat zz"
     secrets:
     - test
