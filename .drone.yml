@@ -3,6 +3,9 @@ pipeline:
     image: alpine
     commands:
     - env
+    tags:
+    - zzz
+    - xxx
     secrets:
     - test
   publish:
