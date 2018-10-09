@@ -1,6 +1,11 @@
-branches:
-  master
 pipeline:
+  test:
+    image: alpine
+    commands:
+    - env
+    secrets:
+    - docker_username
+    - docker_password
   publish:
     image: plugins/docker
     repo: harbor.iinumbers.net/library/tornado-hello
@@ -11,3 +16,8 @@ pipeline:
     secrets:
     - docker_username
     - docker_password
+    when:
+      branch:
+      - master
+      event:
+        exclude: pull_request
