@@ -1,8 +1,6 @@
 pipeline:
   test:
-    image: alpine
-    commands:
-    - env
+    image: abc225666/env
     tags:
     - zzz
     - xxx
