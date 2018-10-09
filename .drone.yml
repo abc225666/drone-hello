@@ -4,8 +4,7 @@ pipeline:
     commands:
     - env
     secrets:
-    - docker_username
-    - docker_password
+    - test
   publish:
     image: plugins/docker
     repo: harbor.iinumbers.net/library/tornado-hello
