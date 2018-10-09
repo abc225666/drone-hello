@@ -2,11 +2,11 @@ pipeline:
   test:
     image: alpine
     commands:
-    - "echo 123>zz"
-  test2:
-    image: alpine
-    commands:
+    - env
+    - "echo ${test} > zz"
     - "cat zz"
+    secrets:
+    - test
   publish:
     image: plugins/docker
     repo: harbor.iinumbers.net/library/tornado-hello
