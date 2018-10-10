@@ -29,7 +29,8 @@ pipeline:
     chart: ./charts/drone-hello
     release: aaa
     namespace: test
-    prefix: prod
+    prefix: PROD
+    debug: true
     values: secret.regsecret="${REGSECRET}"
     secrets:
     - prod_regsecret
