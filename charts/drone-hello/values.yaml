@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: harbor.iinumbers.net/library/tornado-hello
+  tag: latest
+  pullPolicy: IfNotPresent
+
+secret:
+  regsecret: "" 
+
+ 

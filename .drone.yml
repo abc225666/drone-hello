@@ -1,10 +1,4 @@
 pipeline:
-  test:
-    image: alpine
-    commands:
-    - env
-    secrets:
-    - test
   publish:
     image: plugins/docker
     repo: harbor.iinumbers.net/library/tornado-hello
@@ -20,3 +14,15 @@ pipeline:
       - master
       event:
         exclude: pull_request
+  deploy:
+    image: quay.io/ipedrazas/drone-helm
+    skip_tls_verify: true
+    chart: ./charts/drone-hello
+    release: aaa
+    namespace: test
+    values: secret.regsecret=${regsecret}
+    secrets:
+    - regsecret
+    when:
+      event: deployment
+      environment: production

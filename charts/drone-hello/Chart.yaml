@@ -1,0 +1,6 @@
+name: drone-hello
+description: simple backend to show drone ci/cd
+version: 0.1.0
+maintainer:
+- name: wangtr
+  email: qwe50120@gmail.com
