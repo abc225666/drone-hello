@@ -6,6 +6,6 @@ image:
   pullPolicy: IfNotPresent
 
 secret:
-  regsecret: "" 
+  regsecret: something 
 
  
