@@ -20,7 +20,7 @@ pipeline:
     chart: ./charts/drone-hello
     release: aaa
     namespace: test
-    values: secret.regsecret=${regsecret}
+    values: secret.regsecret=${REGSECRET}
     secrets:
     - regsecret
     - api_server
