@@ -5,7 +5,7 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
 
-secret:
-  regsecret: something 
-
- 
+imageCredentials:
+  registry: harbor.iinumbers.net
+  username:
+  password:

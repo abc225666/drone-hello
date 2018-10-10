@@ -14,14 +14,6 @@ pipeline:
       - master
       event:
         exclude: pull_request
-  test:
-    image: alpine
-    commands:
-    - env
-    secrets:
-    - prod_regsecret
-    - prod_api_server
-    - prod_kubernetes_token
 
   deploy:
     image: quay.io/ipedrazas/drone-helm
@@ -31,11 +23,19 @@ pipeline:
     namespace: test
     prefix: PROD
     debug: true
-    values: secret.regsecret="$REGSECRET"
+    client_only: true
+    values:
+    - imageCredentials.username=$DOCKER_USERNAME
+    - imageCredentials.password=$DOCKER_PASSWORD
     secrets:
-    - prod_regsecret
-    - prod_api_server
-    - prod_kubernetes_token
+    - source: docker_username
+      target: prod_docker_username
+    - source: docker_password
+      target: prod_docker_password
+    - source: prod_api_server
+      target: prod_api_server
+    - source: prod_kubernetes_token
+      target: prod_kubernetes_token
     when:
       event: deployment
       environment: production
