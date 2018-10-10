@@ -23,6 +23,8 @@ pipeline:
     values: secret.regsecret=${regsecret}
     secrets:
     - regsecret
+    - api_server
+    - kubernetes_token
     when:
       event: deployment
       environment: production
