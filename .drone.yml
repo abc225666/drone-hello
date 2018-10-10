@@ -31,7 +31,7 @@ pipeline:
     namespace: test
     prefix: PROD
     debug: true
-    values: secret.regsecret="${REGSECRET}"
+    values: secret.regsecret="$REGSECRET"
     secrets:
     - prod_regsecret
     - prod_api_server
