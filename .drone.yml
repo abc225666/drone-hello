@@ -14,6 +14,15 @@ pipeline:
       - master
       event:
         exclude: pull_request
+  test:
+    image: alpine
+    commands:
+    - env
+    secrets:
+    - prod_regsecret
+    - prod_api_server
+    - prod_kubernetes_token
+
   deploy:
     image: quay.io/ipedrazas/drone-helm
     skip_tls_verify: true
@@ -21,7 +30,7 @@ pipeline:
     release: aaa
     namespace: test
     prefix: prod
-    values: secret.regsecret=${PROD_REGSECRET}
+    values: secret.regsecret="${PROD_REGSECRET}"
     secrets:
     - prod_regsecret
     - prod_api_server
