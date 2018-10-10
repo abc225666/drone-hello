@@ -20,11 +20,12 @@ pipeline:
     chart: ./charts/drone-hello
     release: aaa
     namespace: test
-    values: secret.regsecret=${REGSECRET}
+    prefix: prod
+    values: secret.regsecret=${PROD_REGSECRET}
     secrets:
-    - regsecret
-    - api_server
-    - kubernetes_token
+    - prod_regsecret
+    - prod_api_server
+    - prod_kubernetes_token
     when:
       event: deployment
       environment: production
