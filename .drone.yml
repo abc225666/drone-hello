@@ -21,12 +21,15 @@ pipeline:
     chart: ./charts/drone-hello
     release: aaa
     namespace: test
-    prefix: PROD
+    prefix: "PROD"
     debug: true
+    environment:
+    - AAAAAAAA=${DRONE_COMMIT_SHA:0:8}
     client_only: true
     values:
     - imageCredentials.username=$DOCKER_USERNAME
     - imageCredentials.password=$DOCKER_PASSWORD
+    - image.tag=$TAG
     secrets:
     - source: docker_username
       target: prod_docker_username
