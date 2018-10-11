@@ -24,7 +24,7 @@ pipeline:
     prefix: "PROD"
     debug: true
     environment:
-    - AAAAAAAA=${DRONE_COMMIT_SHA:0:8}
+    - PROD_TAG=${DRONE_COMMIT_SHA:0:8}
     client_only: true
     values:
     - imageCredentials.username=$DOCKER_USERNAME
